@@ -16,3 +16,9 @@ class SaleOrder(models.Model):
     picking_ids = fields.One2many('stock.picking', 'sale_id', string='Transfers')
 
 
+class ProcurementGroup(models.Model):
+    _inherit = 'procurement.group'
+
+    sale_id = fields.Many2one('sale.order', 'Sale Order')
+
+
