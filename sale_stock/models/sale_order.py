@@ -22,3 +22,11 @@ class ProcurementGroup(models.Model):
     sale_id = fields.Many2one('sale.order', 'Sale Order')
 
 
+    @api.model
+    def create(self, values):
+        if 'name' in values:
+            order = self.env['sale.order'].sudo().search([('name','=',values['name'])], limit=1)
+            if order:
+                values['sale_id'] = order.id
+        return super(ProcurementGroup, self).create(values)
+
