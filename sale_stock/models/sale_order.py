@@ -5,6 +5,10 @@
 
 from odoo import api, fields, models, _
 
+class StockPicking(models.Model):
+    _inherit = 'stock.picking'
+
+    sale_id = fields.Many2one(related="group_id.sale_id", string="Sales Order", store=True, readonly=False)
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
@@ -12,7 +16,3 @@ class SaleOrder(models.Model):
     picking_ids = fields.One2many('stock.picking', 'sale_id', string='Transfers')
 
 
-class StockPicking(models.Model):
-    _inherit = 'stock.picking'
-
-    sale_id = fields.Many2one(related="group_id.sale_id", string="Sales Order", store=True, readonly=False)
