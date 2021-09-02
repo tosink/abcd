@@ -8,7 +8,7 @@ from odoo.tools import float_is_zero
 
 
 class AccountMove(models.Model):
-    _inherit = 'account.move'
+    _inherit = 'account.invoice'
 
     def _stock_account_get_last_step_stock_moves(self):
         """ Overridden from stock_account.
@@ -102,7 +102,7 @@ class AccountMove(models.Model):
 
 
 class AccountMoveLine(models.Model):
-    _inherit = "account.move.line"
+    _inherit = "account.invoice.line"
 
     def _sale_can_be_reinvoice(self):
         self.ensure_one()
