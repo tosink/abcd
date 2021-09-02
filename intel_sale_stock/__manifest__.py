@@ -2,21 +2,14 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Sales and Warehouse Management',
+    'name': 'Lot & Serial by Intelligenti.io',
     'version': '1.5',
     'category': 'Hidden',
-    'summary': 'Quotation, Sales Orders, Delivery & Invoicing Control',
+    'summary': 'Lot & Serial',
     'description': """
-Manage sales quotations and orders
+Manage lot and serial numbers
 ==================================
 
-This module makes the link between the sales and warehouses management applications.
-
-Preferences
------------
-* Shipping: Choice of delivery at once or partial delivery
-* Invoicing: choose how invoices will be paid
-* Incoterms: International Commercial terms
 
 """,
     'depends': ['sale', 'stock_account'],
