@@ -3,7 +3,7 @@
 
 {
     'name': 'Sales and Warehouse Management',
-    'version': '1.4',
+    'version': '1.5',
     'category': 'Hidden',
     'summary': 'Quotation, Sales Orders, Delivery & Invoicing Control',
     'description': """
@@ -21,6 +21,7 @@ Preferences
 """,
     'depends': ['sale', 'stock_account'],
     'data': [
+        'security/security.xml',
         'views/report_invoice.xml',
     ],
     'installable': True,
